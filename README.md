@@ -7,8 +7,12 @@ Project member: Omar V (criptotoro88@gmail.com)
 If you want to join, please drop me an e-mail
 
 Current progress:
-- Translating Abstract...
+- Translating Section 2...
 
 Progress completed:
+- Section 1: Introduction (grammar review 01)
+- Section 1: Introduction translated
+- Abstract (grammar review 01)
+- Abstract translated
 - Title translated
 - Github created
