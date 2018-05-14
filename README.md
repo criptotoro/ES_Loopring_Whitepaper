@@ -9,7 +9,8 @@ If you want to join, please drop me an e-mail
 Current progress:
 - Translating Section 2
 	- Section 2.1 completed
-	- Section 2.2 in progress...
+	- Section 2.2 completed
+	- Section 2.3 in progress...
 
 
 Progress completed:
