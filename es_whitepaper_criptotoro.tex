@@ -159,11 +159,11 @@ Finalmente, debido a que los libros de órdenes en las cadenas de bloques son p�
 Por las razones antes expuestas, las casas de cambio basadas estrictamente en la cadena de bloques presentan limitaciones que las hacen no competitivas con las casas de cambio centralizadas. Hay una solución intermedia entre la libertad de confianza inherente a la cadena de bloques y la velocidad de intercambio y flexibilidad de órdenes de una casa de cambio centralizada. Protocolos como Loopring y 0x \cite{warren20170x} brindan una solución de acuerdo de intercambio dentro de la cadena con una gestión de órdenes fuera de la cadena. Estas soluciones giran en torno a contratos inteligentes abiertos, pero se hacen camino a través de las limitaciones de escalabilidad mediante la ejecución de varias funciones fuera de la cadena y dando a los nodos flexibilidad en el cumplimiento de roles críticos para la red. Sin embargo, los inconvenientes de un modelo híbrido se mantienen \cite{costofdecent}. El protocolo Loopring sugiere, a través de este artículo, diferencias significativas en nuestra enfoque de una solución híbrida.
 
 
-\section{Loopring Protocol\label{sec:loopring_protocol}}
-Loopring is not a DEX, but a modular protocol for building DEXs on multiple blockchains. We disassemble the component parts of a traditional exchange and offer a set of public smart contracts and decentralized actors in its place. The roles in the network include wallets, relays, liquidity-sharing consortium blockchains, order book browsers, Ring-Miners, and asset tokenization services. Before defining each, we should first understand Loopring orders. 
+\section{Protocolo Loopring\label{sec:loopring_protocol}}
+Loopring no es un DEX, sino un protocolo modular para la creación de DEX en multiples cadenas de bloques. Desensamblamos las partes que componen una casa de cambio tradicional y las ofrecemos como un conjunto público de contratos inteligentes y actores descentralizados en su lugar. Los roles de éstos en la red incluyen carteras virtuales, relés, consorcio de compartición de líquidez en la cadena de bloques, exploración del libro de órdenes, mineros de anillo, y servicios de tokenización de activos. Previamente a definir cada uno de ellos, debemos entender primero las órdenes de Loopring.
 
 \subsection{Order Ring\label{sec:order_ring}}
-Loopring orders are expressed in what we call a Unidirectional Order Model (UDOM)\cite{coinport2014udom}. UDOM expresses orders as token exchange requests, \verb|amountS|/\verb|amountB|, (amount to sell/buy)  instead of bids and asks. Since every order is just an exchange rate between two tokens, a powerful feature of the protocol is the mixing and matching of multiple orders in circular trade. By using up to 16 orders instead of a single trading pair, there is a dramatic increase in liquidity and potential for price improvement. 
+Las órdenes de Loopring se expresan en lo que definimos como Modelo de Órden Unidireccional (UDOM, del inglés \textit{Unidirectional Order Model}) \cite{coinport2014udom}. UDOM expresa las órdenes como peticiones de intercambio de tókenes, \verb|cantidadV|/\verb|cantidadC|, (cantidad a vender/comprar)  en lugar de precios de compra y venta. Como cada órden es simplemente un tipo de cambio entre dos tokens, una característica potente del protocolo es la mezcla y combinación de múltiples ordenes en un intercambio circular. Al usar hasta 16 órdenes en lugar de un sólo par de cambio, esto permite que haya un aumento drástico de la liquidez y la posibilidad de una mejora del precio. 
 
 \begin{center}
 \begin{figurehere}
@@ -199,20 +199,20 @@ Loopring orders are expressed in what we call a Unidirectional Order Model (UDOM
   \node [order] (order2) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDER\#2}\\
-  \textbf{owner: Y}\\
-  \textbf{amountS: 9B}\\
-  \textbf{amountB: 12C}
+  \textbf{ORDEN\#2}\\
+  \textbf{dueño: Y}\\
+  \textbf{cantidadV: 9B}\\
+  \textbf{cantidadC: 12C}
  \end{tabular}
  };
  
   \node [order, below of=order2, xshift=-3.5cm] (order1) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDER\#1}\\
-  \textbf{owner: X}\\
-  \textbf{amountS: 10000A}\\
-  \textbf{amountB: 2B}
+  \textbf{ORDEN\#1}\\
+  \textbf{dueño: X}\\
+  \textbf{cantidadV: 10000A}\\
+  \textbf{cantidadC: 2B}
  \end{tabular}
  };
  
@@ -220,10 +220,10 @@ Loopring orders are expressed in what we call a Unidirectional Order Model (UDOM
   \node [order, below of=order2, xshift=3.5cm] (order3) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDER\#3}\\
-  \textbf{owner: Z}\\
-  \textbf{amountS: 100C}\\
-  \textbf{amountB: 160A}
+  \textbf{ORDEN\#3}\\
+  \textbf{dueño: Z}\\
+  \textbf{cantidadV: 100C}\\
+  \textbf{cantidadC: 160A}
  \end{tabular}
  };
  
@@ -233,7 +233,7 @@ Loopring orders are expressed in what we call a Unidirectional Order Model (UDOM
 
 \end{tikzpicture}
 
-\caption{An order-ring of 3 orders}
+\caption{Una orden anular compuesta de 3 órdenes}
 \label{fig:ring}
 \end{figurehere}
 \end{center}
