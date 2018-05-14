@@ -129,7 +129,7 @@ Con la proliferación de activos basados en la cadena de bloques, la necesidad d
  
 Por ello, el intercambio de tokens (o valor) libre de confianza es un ejemplo convincente de la tecnología de la cadena de bloques. Hasta ahora, sin embargo, los entusiastas de las criptomonedas se han conformado mayormente con intercambiar tokens en las casas de cambio centralizadas. El protocolo Loopring es necesario porque, tal como Bitcoin enfatizó responsablemente, en relación al dinero electrónico \textit{peer-to-peer}, \enquote{las principales ventajas se pierden si la confianza en una tercera parte es aún necesaria para evitar el doble gasto}, de la misma manera las principales ventajas de los activos descentralizados se pierden si deben ser confiados y transferidos a través de casas de cambio centralizadas.
 
-Intercambiar tokens descentralizados en casas de cambio centralizadas no tiene sentido desde un punto de vista filosófico, puesto que falla en apoyar las virtudes que estos proyectos de descentralización defienden. El uso de casas de cambio centralizadas también presenta numerosos riesgos y limitaciones prácticas que se describen a continuación. Las casas de cambio descentralizadas (comúnmente abreviadas en inglés como DEX) \cite{schuh2015bitshares} \cite{bancor} \cite{kyber} han intentado hacer frente a estos problemas, en muchos casos disminuyendo los riesgos de seguridad mediante el uso de cadenas de bloques para la desintermediación. Sin embargo, existe un margen de mejora de rendimiento sustancial a medida que las capacidades de los DEX los conviertan en la infraestructura crucial para la nueva economía. Loopring pretende proveer las herramientas modulares para dicha infraestructura con su protocolo agnóstico y abierto para \textit{dApps}.
+Intercambiar tokens descentralizados en casas de cambio centralizadas no tiene sentido desde un punto de vista filosófico, puesto que falla en apoyar las virtudes que estos proyectos de descentralización defienden. El uso de casas de cambio centralizadas también presenta numerosos riesgos y limitaciones prácticas que se describen a continuación. Las casas de cambio descentralizadas (comúnmente abreviadas en inglés como DEX) \cite{schuh2015bitshares} \cite{bancor} \cite{kyber} han intentado hacer frente a estos problemas, en muchos casos disminuyendo los riesgos de seguridad mediante el uso de cadenas de bloques para la desintermediación. Sin embargo, existe un margen de mejora de rendimiento sustancial a medida que las capacidades de los DEX los conviertan en la infraestructura crucial para la nueva economía. Loopring pretende proveer las herramientas modulares para dicha infraestructura con su protocolo agnóstico y abierto para dApps.
 
 \section{Panorama actual de las casas de cambio\label{sec:current_exchange_landscape}}
 
@@ -162,8 +162,8 @@ Por las razones antes expuestas, las casas de cambio basadas estrictamente en la
 \section{Protocolo Loopring\label{sec:loopring_protocol}}
 Loopring no es un DEX, sino un protocolo modular para la creación de DEX en multiples cadenas de bloques. Desensamblamos las partes que componen una casa de cambio tradicional y las ofrecemos como un conjunto público de contratos inteligentes y actores descentralizados en su lugar. Los roles de éstos en la red incluyen carteras virtuales, relés, consorcio de compartición de líquidez en la cadena de bloques, exploración del libro de órdenes, mineros de anillo, y servicios de tokenización de activos. Previamente a definir cada uno de ellos, debemos entender primero las órdenes de Loopring.
 
-\subsection{Order Ring\label{sec:order_ring}}
-Las órdenes de Loopring se expresan en lo que definimos como Modelo de Órden Unidireccional (UDOM, del inglés \textit{Unidirectional Order Model}) \cite{coinport2014udom}. UDOM expresa las órdenes como peticiones de intercambio de tókenes, \verb|cantidadV|/\verb|cantidadC|, (cantidad a vender/comprar)  en lugar de precios de compra y venta. Como cada órden es simplemente un tipo de cambio entre dos tokens, una característica potente del protocolo es la mezcla y combinación de múltiples ordenes en un intercambio circular. Al usar hasta 16 órdenes en lugar de un sólo par de cambio, esto permite que haya un aumento drástico de la liquidez y la posibilidad de una mejora del precio. 
+\subsection{Anillo de órdenes\label{sec:order_ring}}
+Las órdenes de Loopring se expresan en lo que definimos como un Modelo de Órden Unidireccional (MOU, del inglés \textit{Unidirectional Order Model}) \cite{coinport2014udom}. MOU expresa las órdenes como peticiones de intercambio de tókenes, \verb|cantidadV|/\verb|cantidadC|, (cantidad a vender/comprar)  en lugar de precios de compra y venta. Como cada órden es simplemente un tipo de cambio entre dos tokens, una característica potente del protocolo es la mezcla y combinación de múltiples ordenes en un intercambio circular. Al usar hasta 16 órdenes en lugar de un sólo par de cambio, esto permite que haya un aumento drástico de la liquidez y la posibilidad de una mejora del precio. 
 
 \begin{center}
 \begin{figurehere}
@@ -233,13 +233,13 @@ Las órdenes de Loopring se expresan en lo que definimos como Modelo de Órden U
 
 \end{tikzpicture}
 
-\caption{Una orden anular compuesta de 3 órdenes}
+\caption{Un anillo compuesto de 3 órdenes}
 \label{fig:ring}
 \end{figurehere}
 \end{center}
 
 
-The above figure shows an order-ring of 3 orders. Each order's token to sell (\verb|tokenS|) is another order's token to buy (\verb|tokenB|). It creates a loop that allows each order to exchange their desired tokens without requiring an opposing order for its pair. Traditional order pair trades can, of course, still be executed, in what is essentially a special case of an order-ring. 
+La figura anterior muestra un anillo compuesto de 3 órdenes. Cada orden de venta de un token (\verb|tokenV|) es otra orden de compra del token (\verb|tokenC|). Esto crea un bucle que permite a cada orden intercambiar los tókenes deseados sin requerir de una órden opuesta para su par de cambio. Traditional order pair trades can, of course, still be executed, in what is essentially a special case of an order-ring. 
 
 \begin{definition}[order-ring] Let $C_{0}$, $C_{1}$, $\cdots$, $C_{n-1}$ be $n$ different tokens, $O_{0\rightarrow 1}$, $\cdots$, $O_{i\rightarrow i\oplus 1}$, $\cdots$, $O_{n-1 \rightarrow 0}$ be $n$ orders. Those orders can form a order-ring for trading:
 $$O_{0\rightarrow 1} \rightarrow \cdots \rightarrow O_{i\rightarrow i\oplus 1} \rightarrow \cdots \rightarrow O_{n-1\rightarrow 0} \text{, }$$
