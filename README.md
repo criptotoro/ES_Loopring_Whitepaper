@@ -7,7 +7,10 @@ Project member: Omar V (criptotoro88@gmail.com)
 If you want to join, please drop me an e-mail
 
 Current progress:
-- Translating Section 2...
+- Translating Section 2
+	- Section 2.1 completed
+	- Section 2.2 in progress...
+
 
 Progress completed:
 - Section 1: Introduction (grammar review 01)
