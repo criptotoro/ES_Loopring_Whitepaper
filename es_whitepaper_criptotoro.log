@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6700) (preloaded format=xelatex 2018.5.13)  14 MAY 2018 22:54
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6700) (preloaded format=xelatex 2018.5.13)  15 MAY 2018 18:41
 entering extended mode
 **./es_whitepaper_criptotoro.tex
 (es_whitepaper_criptotoro.tex
@@ -887,22 +887,76 @@ libraryintersections.code.tex"
 libraryfpu.code.tex")
 \pgf@intersect@solutions=\count174
 ))
-\c@definition=\count175
-\c@theorem=\count176
-\c@lemma=\count177
-\c@proof=\count178
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\translat
+or.sty"
+Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
+)
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgfgantt\pgfgantt.s
+ty"
+Package: pgfgantt 2018/01/10 v5.0 Draw Gantt diagrams with TikZ
+
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
+\tikz\libraries\tikzlibrarycalc.code.tex"
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
+)
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
+\tikz\libraries\tikzlibrarypatterns.code.tex"
+File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.1a (rcs-revision 1.2)
+
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pgf
+librarypatterns.code.tex"
+File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
+))
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
+\tikz\libraries\tikzlibraryshapes.geometric.code.tex"
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\sha
+pes\pgflibraryshapes.geometric.code.tex"
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+
+))
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgfca
+lendar.sty"
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pgf
+calendar.code.tex"
+File: pgfcalendar.code.tex 2007/07/23 v3.0.1a (rcs-revision 1.11)
+\pgfcalendarcurrentjulian=\count175
+))
+\gtt@currentline=\count176
+\gtt@lasttitleline=\count177
+\gtt@currgrid=\count178
+\gtt@chartwidth=\count179
+\gtt@lasttitleslot=\count180
+\gtt@elementid=\count181
+\gtt@today@slot=\count182
+\gtt@startjulian=\count183
+\gtt@endjulian=\count184
+\gtt@chartid=\count185
+\gtt@vrule@slot=\count186
+\gtt@calendar@slots=\count187
+\gtt@calendar@weeknumber=\count188
+\gtt@calendar@startofweek=\count189
+\gtt@left@slot=\count190
+\gtt@right@slot=\count191
+)
+\c@definition=\count192
+\c@theorem=\count193
+\c@lemma=\count194
+\c@proof=\count195
 
 ("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\appendix\appendix.s
 ty"
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count179
-\c@@ppsavesec=\count180
-\c@@ppsaveapp=\count181
+\c@@pps=\count196
+\c@@ppsavesec=\count197
+\c@@ppsaveapp=\count198
 )
 ("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\marginnote\marginno
 te.sty"
 Package: marginnote 2018/04/13 v1.3 non floating margin notes for LaTeX
-\c@mn@abspage=\count182
+\c@mn@abspage=\count199
 )
 ("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tablefootnote\table
 footnote.sty"
@@ -923,20 +977,10 @@ Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 ("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\bigfoot\perpage.sty
 "
 Package: perpage 2014/10/25 2.0 Reset/sort counters per page
-\c@abspage=\count183
+\c@abspage=\count266
 )
-\c@pp@a@footnote=\count184
+\c@pp@a@footnote=\count267
 
-("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlayer
-\tikz\libraries\tikzlibraryshapes.geometric.code.tex"
-File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
-)
-
-("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\sha
-pes\pgflibraryshapes.geometric.code.tex"
-File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
-
-))
 ("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty
 "
 Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
@@ -954,7 +998,7 @@ File: ppxetex.def 2017/10/31 v0.5l Pdfpages driver for XeTeX (AM)
 \AM@pagebox=\box94
 \AM@global@opts=\toks42
 \AM@toc@title=\toks43
-\c@AM@survey=\count185
+\c@AM@survey=\count268
 \AM@templatesizebox=\box95
 )
 
@@ -964,20 +1008,20 @@ LaTeX Warning: Unused global option(s):
 (es_whitepaper_criptotoro.aux)
 \openout1 = `es_whitepaper_criptotoro.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
@@ -1018,46 +1062,54 @@ Package caption Info: End \AtBeginDocument code.
 
 \AtBeginShipoutBox=\box96
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 116.
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\translat
+or-months-dictionary-English.dict"
+Dictionary: translator-months-dictionary, Language: English 
+)
+("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\translat
+or-months-dictionary-Spanish.dict"
+Dictionary: translator-months-dictionary, Language: Spanish 
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 121.
 
 ("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 116.
+LaTeX Font Info:    Try loading font information for U+msb on input line 121.
 
 ("C:\Users\Omar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 Package natbib Warning: Citation `buterin2017ethereum' on page 1 undefined on i
-nput line 120.
+nput line 125.
 
 
 Package natbib Warning: Citation `wood2014ethereum' on page 1 undefined on inpu
-t line 120.
+t line 125.
 
 
 Package natbib Warning: Citation `dai2017smart' on page 1 undefined on input li
-ne 120.
+ne 125.
 
 
 Package natbib Warning: Citation `atterlonn2018distributed' on page 1 undefined
- on input line 120.
+ on input line 125.
 
 
 Package natbib Warning: Citation `desotocapital' on page 1 undefined on input l
-ine 128.
+ine 133.
 
 
 Package natbib Warning: Citation `schuh2015bitshares' on page 1 undefined on in
-put line 132.
+put line 137.
 
 
-Package natbib Warning: Citation `bancor' on page 1 undefined on input line 132
+Package natbib Warning: Citation `bancor' on page 1 undefined on input line 137
 .
 
 
-Package natbib Warning: Citation `kyber' on page 1 undefined on input line 132.
+Package natbib Warning: Citation `kyber' on page 1 undefined on input line 137.
 
 
 [1
@@ -1065,103 +1117,103 @@ Package natbib Warning: Citation `kyber' on page 1 undefined on input line 132.
 ]
 
 Package natbib Warning: Citation `coincheckhack' on page 2 undefined on input l
-ine 139.
+ine 144.
 
 
 Package natbib Warning: Citation `mcmillan2014inside' on page 2 undefined on in
-put line 139.
+put line 144.
 
 
 Package natbib Warning: Citation `fakevolume' on page 2 undefined on input line
- 145.
+ 150.
 
 
 Package natbib Warning: Citation `limitorderliquidity' on page 2 undefined on i
-nput line 152.
+nput line 157.
 
 [2]
 
 Package natbib Warning: Citation `warren20170x' on page 3 undefined on input li
-ne 159.
+ne 164.
 
 
 Package natbib Warning: Citation `costofdecent' on page 3 undefined on input li
-ne 159.
+ne 164.
 
 
 Package natbib Warning: Citation `coinport2014udom' on page 3 undefined on inpu
-t line 166.
+t line 171.
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 253.
+(amsmath)                 on input line 258.
 
 [3]
 
 Package natbib Warning: Citation `supersymmetry' on page 4 undefined on input l
-ine 261.
+ine 266.
 
 
-Overfull \hbox (8.4994pt too wide) in paragraph at lines 281--282
+Overfull \hbox (8.4994pt too wide) in paragraph at lines 286--287
 []\TU/lmr/bx/n/10 Consortium Liquidity Sharing Blockchain/Relay-
  []
 
 
 LaTeX Warning: Reference `app:protocol_ethereum' on page 4 undefined on input l
-ine 285.
+ine 290.
 
 
-Package natbib Warning: Citation `ERC20' on page 4 undefined on input line 287.
+Package natbib Warning: Citation `ERC20' on page 4 undefined on input line 292.
 
 
 [4]
-Overfull \hbox (1.24333pt too wide) in paragraph at lines 471--471
+Overfull \hbox (1.24333pt too wide) in paragraph at lines 476--476
 []\TU/lmss/bx/n/8 blockchain 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 618--619
+Underfull \hbox (badness 10000) in paragraph at lines 623--624
 []\TU/lmr/m/n/10 Sell ETH at price of 300 USD/ETH to
  []
 
 
-Underfull \hbox (badness 5331) in paragraph at lines 618--619
+Underfull \hbox (badness 5331) in paragraph at lines 623--624
 \TU/lmr/m/n/10 get 3000 USD. This order can expressed as:
  []
 
 
 Package natbib Warning: Citation `dannen2017introducing' on page 6 undefined on
- input line 627.
+ input line 632.
 
 [6]
 Missing character: There is no − in font cmr10!
  [7]
-Underfull \hbox (badness 5548) in paragraph at lines 829--830
+Underfull \hbox (badness 5548) in paragraph at lines 834--835
 []\TU/lmr/m/n/10 To make the transactions, the LPSC uses the
  []
 
 [8]
 
 Package natbib Warning: Citation `vitalikgovernance' on page 9 undefined on inp
-ut line 956.
+ut line 961.
 
 
 Package natbib Warning: Citation `LRCtokendoc' on page 9 undefined on input lin
-e 958.
+e 963.
 
 
 Package natbib Warning: Citation `dualauthor' on page 9 undefined on input line
- 971.
+ 976.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 988--989
+Underfull \hbox (badness 10000) in paragraph at lines 993--994
 []\TU/lmr/m/n/10 The Loopring Protocol will now verify each
  []
 
 
 Package natbib Warning: Citation `unenumerated2006' on page 10 undefined on inp
-ut line 1015.
+ut line 1020.
 
 [10]
 No file es_whitepaper_criptotoro.bbl.
@@ -1172,15 +1224,12 @@ Package natbib Warning: There were undefined citations.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 20896 strings out of 427799
- 413946 string characters out of 3148032
- 544920 words of memory out of 3000000
- 24482 multiletter control sequences out of 15000+200000
+ 21805 strings out of 427799
+ 436850 string characters out of 3148032
+ 572655 words of memory out of 3000000
+ 25363 multiletter control sequences out of 15000+200000
  10144 words of font info for 60 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
  48i,17n,77p,1540b,1039s stack positions out of 5000i,500n,10000p,200000b,50000s
