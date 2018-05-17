@@ -7,10 +7,15 @@ Project member: Omar V (criptotoro88@gmail.com)
 If you want to join, please drop me an e-mail
 
 Current progress:
+- Translating section 7: "Protocol Specification"
 
--  Sections 3,4,5 (grammar review 01)
 
 Progress completed:
+- Sections 6 (grammar review 01)
+- Sections 3,4,5 (grammar review 02)
+- Section 6: "Operational Flexibility"	translated
+- Section 5: "Exchange process"	translated
+- Sections 3,4,5 (grammar review 01)
 - Sections 1,2 (grammar review 02)
 - Format check 01
 - Header translations
