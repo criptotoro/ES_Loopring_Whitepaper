@@ -2,11 +2,10 @@
 
 Project for the translation of Loopring´s whitepaper to Spanish
 
-Project member: Omar V (criptotoro88@gmail.com) - Main translator & team leader
-				Jose A (javalero@gandia.uned.es)- Grammar reviewer
-				
-If you want to join, please drop an e-mail to Omar or contact me through LinkedIn
-https://www.linkedin.com/in/omarvalero/-
+Project member: 
+Omar V (criptotoro88@gmail.com) - Main translator & team leader
+Jose A (javalero@gandia.uned.es)- Grammar reviewer
+
 
 Current progress 22/05/2018:
 - Abstract + Sections 1-5 (grammar review 03)
