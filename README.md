@@ -6,11 +6,23 @@ Project member: Omar V (criptotoro88@gmail.com)
 
 If you want to join, please drop me an e-mail
 
-Current progress 21/05/2018:
-- Translating section 8: "LRx Token" 
+Current progress 22/05/2018:
+- Abstract + Sections 1-5 (grammar review 03)
+- Sections 6-7 (grammar review 02)
 
+Future work:
+- Sections 8-12 (grammar review 01)
+- Sections 8-12 (grammar review 02)
+- Sections 6-12 (grammar review 03)
+- Whole paper (grammar review 04)
+- Whole paper (external review 01-02)
 
 Progress completed:
+- Section 12: "Acknowledgments" translated
+- Section 11: "Summary" translated
+- Section 10: "Other Attacks" translated
+- Section 9: "Fraud and Attack preventions" translated
+- Section 8: "LRx Token" translated
 - Section 7 (grammar review 01)
 - Section 7: "Protocol Specification" translated
 - Section 6 (grammar review 01)
