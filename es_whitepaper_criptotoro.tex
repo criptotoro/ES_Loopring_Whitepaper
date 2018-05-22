@@ -68,7 +68,7 @@
 %\includepdf[pages=1]{cover}
 \hyphenpenalty=750
 
-\title{\textbf{Loopring:}\\\textbf{Un protocolo de intercambio de tokens descentralizado}}
+\title{\textbf{Loopring:}\\\textbf{Un Protocolo de Intercambio de Tokens Descentralizado}}
 \author{
   Daniel Wang\\
   \texttt{daniel@loopring.org}\\
@@ -117,7 +117,7 @@
 
 
 \begin{abstract}
-Loopring es un protocolo abierto para la creación de casas de cambio descentralizadas. Loopring opera como un conjunto público de contratos inteligentes (\textit{smart contracts}) responsables del intercambio y la liquidación, con un grupo de actores externos (\textit{off-chain}) añadiendo y comunicando órdenes. El protocolo es libre, extensible y sirve como un bloque de código estandarizado para aplicaciones descentralizadas (dApps) que quieran incorporar la funcionalidad de intercambio. Sus estándares interoperables facilitan el intercambio anónimo y libre de confianza en terceras partes. Una importante mejora frente a los protocolos de intercambio descentralizados actuales es su habilidad para mezclar y combinar diferentes órdenes entre sí, obviando las restricciones asociadas al uso de pares de cambio entre dos tokens, y mejorando considerablemente la liquidez. Loopring también emplea una solución única y robusta para prevenir la inversión ventajista, o \textit{front-running}: el intento de enviar transacciones a un bloque de manera más rapida que el proveedor de la solución original. Loopring es una tecnología agnóstica, por lo que puede lanzarse en cualquier cadena de bloques que tenga la funcionalidad de los contratos inteligentes. En el momento de redactarse este artículo, Loopring ya es operable en Ethereum \cite{buterin2017ethereum} \cite{wood2014ethereum}, Qtum \cite{dai2017smart}, y próximamente en NEO \cite{atterlonn2018distributed}.
+Loopring es un protocolo abierto para la creación de exchanges descentralizadas. Loopring opera como un conjunto público de contratos inteligentes (\textit{smart contracts}) responsables del intercambio y la liquidación, con un grupo de actores externos (\textit{off-chain}) añadiendo y comunicando órdenes. El protocolo es libre, extensible y sirve como un bloque de código estandarizado para aplicaciones descentralizadas (dApps) que quieran incorporar la funcionalidad de intercambio. Sus estándares interoperables facilitan el intercambio anónimo y libre de confianza en terceras partes. Una importante mejora frente a los protocolos de intercambio descentralizados actuales es su habilidad para mezclar y combinar diferentes órdenes entre sí, obviando las restricciones asociadas al uso de pares de cambio entre dos tokens, y mejorando considerablemente la liquidez. Loopring también emplea una solución única y robusta para prevenir el front-running: el intento de enviar transacciones a un bloque de manera más rapida que el proveedor de la solución original. Loopring es una tecnología agnóstica, por lo que puede lanzarse en cualquier blockchain que tenga la funcionalidad de los contratos inteligentes. En el momento de redactarse este artículo, Loopring ya es operable en Ethereum \cite{buterin2017ethereum} \cite{wood2014ethereum}, Qtum \cite{dai2017smart}, y próximamente en NEO \cite{atterlonn2018distributed}.
 \end{abstract}
 
 
@@ -125,49 +125,48 @@ Loopring es un protocolo abierto para la creación de casas de cambio descentral
 \begin{multicols}{2}
 \section{Introducción\label{sec:introduction}}
 
-Con la proliferación de activos basados en la cadena de bloques, la necesidad de intercambiar estos activos entre contrapartes ha aumentado considerablemente. A medida que miles de tokens nuevos son introducidos - incluyendo la tokenización de activos tradicionales - esta necesidad seguirá aumentando. Ya sea intercambiando tokens por motivos especulativos, o bien digitalizando los activos para acceder a las redes mediante el uso de tokens de utilidad nativos, la habilidad de intercambiar un criptoactivo por otro es fundamental para el ecosistema. Efectivamente, hay una energia potencial en los activos \cite{desotocapital}, y hacer efectiva esta energía - desbloqueando capital - requiere no sólo reivindicar la propiedad, que es lo que las cadenas de bloque han permitido indudablemente, sino también poder transferir y transformar estos activos libremente.
+Con la proliferación de activos basados en la blockchain, la necesidad de intercambiar estos activos entre contrapartes ha aumentado considerablemente. A medida que miles de tokens nuevos son introducidos - incluyendo la tokenización de activos tradicionales - esta necesidad seguirá aumentando. Ya sea intercambiando tokens por motivos especulativos, o bien digitalizando los activos para acceder a las redes mediante el uso de tokens de utilidad nativos, la habilidad de intercambiar un criptoactivo por otro es fundamental para el ecosistema. Efectivamente, hay una energia potencial en los activos \cite{desotocapital}, y hacer efectiva esta energía - desbloqueando capital - requiere no sólo reivindicar la propiedad, que es lo que las cadenas de bloque han permitido indudablemente, sino también poder transferir y transformar estos activos libremente.
  
-Por ello, el intercambio de tokens (o valor) libre de confianza es un ejemplo convincente de la tecnología de la cadena de bloques. Hasta ahora, sin embargo, los entusiastas de las criptomonedas se han conformado mayormente con intercambiar tokens en las casas de cambio centralizadas. El protocolo Loopring es necesario porque, tal como Bitcoin enfatizó responsablemente \cite{nakamoto2008bitcoin}, en relación al dinero electrónico entre pares (del inglés, \textit{peer-to-peer}), \enquote{las principales ventajas se pierden si la confianza en una tercera parte es aún necesaria para evitar el doble gasto}. De la misma manera, las principales ventajas de los activos descentralizados se pierden si deben ser confiados y transferidos a través de casas de cambio centralizadas.
+Por ello, el intercambio de tokens (o valor) libre de confianza es un ejemplo convincente de la tecnología de la blockchain. Hasta ahora, sin embargo, los entusiastas de las criptomonedas se han conformado mayormente con intercambiar tokens en las exchanges centralizadas. El protocolo Loopring es necesario porque, tal como Bitcoin enfatizó responsablemente \cite{nakamoto2008bitcoin}, en relación al dinero electrónicopeer-to-peer, \enquote{las principales ventajas se pierden si la confianza en una tercera parte es aún necesaria para evitar el doble gasto}. De la misma manera, las principales ventajas de los activos descentralizados se pierden si deben ser confiados y transferidos a través de exchanges centralizadas.
 
 % format correction (Omar)
-{\setlength{\parskip}{0cm}Intercambiar tokens descentralizados en casas de cambio centralizadas no tiene sentido desde un punto de vista lógico, puesto que falla en apoyar las virtudes que estos proyectos de descentralización defienden. El uso de casas de cambio centralizadas también presenta numerosos riesgos y limitaciones prácticas que se describen a continuación. Las casas de cambio descentralizadas (comúnmente referidas como DEX, del inglés, \textit{decentralized exchange}) \cite{schuh2015bitshares} \cite{bancor} \cite{kyber} han intentado hacer frente a estos problemas, en muchos casos disminuyendo los riesgos de seguridad mediante el uso de cadenas de bloques para la desintermediación. Sin embargo, todavía existe un margen de mejora considerable a medida que la capacidad de los DEX los conviertan en una infraestructura crucial para la nueva economía. Loopring pretende proveer las herramientas modulares para dicha infraestructura con su protocolo agnóstico y abierto para dApps.}
+{\setlength{\parskip}{0cm}Intercambiar tokens descentralizados en exchanges centralizadas no tiene sentido desde un punto de vista lógico, puesto que falla en apoyar las virtudes que estos proyectos de descentralización defienden. El uso de exchanges centralizadas también presenta numerosos riesgos y limitaciones prácticas que se describen a continuación. Las exchanges descentralizadas (comúnmente referidas como DEX, del inglés, \textit{decentralized exchange}) \cite{schuh2015bitshares} \cite{bancor} \cite{kyber} han intentado hacer frente a estos problemas, en muchos casos disminuyendo los riesgos de seguridad mediante el uso de blockchains para la desintermediación. Sin embargo, todavía existe un margen de mejora considerable a medida que la capacidad de los DEX los conviertan en una infraestructura crucial para la nueva economía. Loopring pretende proveer las herramientas modulares para dicha infraestructura con su protocolo agnóstico y abierto para dApps.}
 
 
 
-\section{Panorama actual de las casas de cambio\label{sec:current_exchange_landscape}}
+\section{Panorama Actual de las Exchanges\label{sec:current_exchange_landscape}}
 
-\subsection{Deficiencias de las casas de cambio centralizadas}
-Los tres riesgos principales de las casas de cambio centralizadas son; 1) falta de seguridad, 2) falta de transparencia y 3) falta de liquidez.
+\subsection{Insuficiencias de las Exchanges Centralizadas}
+Los tres riesgos principales de las exchanges centralizadas son; 1) falta de seguridad, 2) falta de transparencia y 3) falta de liquidez.
 
-La \textbf{falta de seguridad} surge cuando los usuarios ceden el control de sus claves privadas (y por consiguiente, sus fondos) a una entidad central. Esto expone a los usuarios al riesgo de que las casas de cambio centralizadas caigan en manos de \textit{hackers} maliciosos. Los riesgos de seguridad y \textit{hackeo} a los que toda casa de cambio centralizada se expone son bien conocidos \cite{coincheckhack}  \cite{mcmillan2014inside}, y aún así comúnmente aceptados como un \enquote{riesgo implícito} en el intercambio de criptomonedas. Las casas de cambio centralizadas continuan siendo un centro de atención para los \textit{hackers}, ya que sus servidores controlan millones de dolares en fondos de sus usuarios. Los desarrolladores de estas casas de cambio también pueden cometer errores accidentales y sin maldad con dichos fondos. Sencillamente, los usuarios no tienen el control de sus propios tokens cuando éstos son depositados en una casa de cambio centralizada.
+La \textbf{Falta de Seguridad} surge cuando los usuarios ceden el control de sus claves privadas (y por consiguiente, sus fondos) a una entidad central. Esto expone a los usuarios al riesgo de que las exchanges centralizadas caigan en manos de \textit{hackers} maliciosos. Los riesgos de seguridad y \textit{hackeo} a los que toda exchange centralizada se expone son bien conocidos \cite{coincheckhack}  \cite{mcmillan2014inside}, y aún así comúnmente aceptados como un \enquote{riesgo implícito} en el intercambio de criptomonedas. Las exchanges centralizadas continuan siendo un centro de atención para los \textit{hackers}, ya que sus servidores controlan millones de dolares en fondos de sus usuarios. Los desarrolladores de estas exchanges también pueden cometer errores accidentales y sin maldad con dichos fondos. Sencillamente, los usuarios no tienen el control de sus propios tokens cuando éstos son depositados en una exchange centralizada.
 
-La \textbf{falta de transparencia} expone a los usuarios al riesgo de que las casas de cambio descentralizadas deshonestas actúen injustamente. La diferencia aquí reside en las intenciones maliciosas de los operadores de estas casas de cambio. En las casas de cambio centralizadas, los usuarios no están intercambiando sus propios activos, sino un IOU (del inglés, \textit{I owe you}), un pagaré o instrumento de deuda informal. Cuando los tokens se envian a la cartera virtual de la casa de cambio, ésta adquiere la custodia de los tokens y ofrece unos IOU en su lugar. Todos los intercambios son efectivamente entre los IOU de los usuarios. A la hora de realizar retiros, los usuarios canjean sus IOU con la casa de cambio, y reciben sus tokens en su dirección externa de monedero. Es a través de este proceso donde hay una falta de transparencia; una casa de cambio puede cerrar, congelar su cuenta, declararse en quiebra, etc. También es posible que usen los activos de los usuarios para otros propósitos mientras están en su custodia, como por ejemplo, para prestarlos a terceras partes. La falta de transparencia puede costar a los usuarios una pérdida total de sus fondos, impuestos de transacción más altos, retrasos durante máxima demanda, riesgo regulatorio u órdenes expuestas a inversión ventajista.
+La \textbf{Falta de Transparencia} expone a los usuarios al riesgo de que las exchanges descentralizadas deshonestas actúen injustamente. La diferencia aquí reside en las intenciones maliciosas de los operadores de estas exchanges. En las exchanges centralizadas, los usuarios no están intercambiando sus propios activos, sino un IOU (del inglés, \textit{I owe you}), un pagaré o instrumento de deuda informal. Cuando los tokens se envian a la cartera virtual de la exchange, ésta adquiere la custodia de los tokens y ofrece unos IOU en su lugar. Todos los intercambios son efectivamente entre los IOU de los usuarios. A la hora de realizar retiros, los usuarios canjean sus IOU con la exchange, y reciben sus tokens en su dirección externa de monedero. Es a través de este proceso donde hay una falta de transparencia; una exchange puede cerrar, congelar su cuenta, declararse en quiebra, etc. También es posible que usen los activos de los usuarios para otros propósitos mientras están en su custodia, como por ejemplo, para prestarlos a terceras partes. La falta de transparencia puede costar a los usuarios una pérdida total de sus fondos, impuestos de transacción más altos, retrasos durante máxima demanda, riesgo regulatorio u órdenes expuestas a front-running.
 
-\textbf{Falta de liquidez.} Desde el punto de vista de los operadores de casas de cambio, la liquidez fragmentada impide la entrada de nuevas casas de cambio debido a dos escenarios de \enquote{ganador absoluto}. En primer lugar, la casa de cambio con el mayor número de pares de criptomonedas gana, debido a que los usuarios prefieren realizar todas sus operaciones en una sola casa de cambio. En segundo lugar, la casa de cambio con el libro de órdenes más grande gana, debido a que posee una horquilla de precios (comúnmente denominado en inglés \textit{spread}) favorable para cada par de criptomonedas. Esto disuade la competencia por parte de nuevas casas de cambio, puesto que es difícil para éstas crear liquidez inicial. Como resultado, muchas casas de cambio siguen poseyendo una cuota de mercado alta a pesar de las quejas de sus usuarios y \textit{hackeos} importantes ocurridos. Merece la pena apuntar que, a medida que una casa de cambio centralizada gana cuota de mercado, ésta se convierte en un objectivo para \textit{hackers} mayor.
+\textbf{Falta de Liquidez.} Desde el punto de vista de los operadores de exchanges, la liquidez fragmentada impide la entrada de nuevas exchanges debido a dos escenarios de \enquote{ganador absoluto}. En primer lugar, la exchange con el mayor número de pares de criptomonedas gana, debido a que los usuarios prefieren realizar todas sus operaciones en una sola exchange. En segundo lugar, la exchange con el libro de órdenes más grande gana, debido a que posee una horquilla de precios (comúnmente denominado en inglés \textit{spread}) favorable para cada par de criptomonedas. Esto disuade la competencia por parte de nuevas exchanges, puesto que es difícil para éstas crear liquidez inicial. Como resultado, muchas exchanges siguen poseyendo una cuota de mercado alta a pesar de las quejas de sus usuarios y \textit{hackeos} importantes ocurridos. Merece la pena apuntar que, a medida que una exchange centralizada gana cuota de mercado, ésta se convierte en un objectivo para \textit{hackers} mayor.
 
-Desde el punto de vista de los usuarios, la liquidación fragmentada reduce considerablemente la experiencia del usuario. En una casa de cambio centralizada, los usuarios únicamente son capaces de comerciar dentro de los fondos de liquidez de la propia casa de cambio, con su propio libro de órdenes y entre los pares de criptomonedas a los que se da soporte. Para intercambiar el token \verb|A| por el token \verb|B|, los usuarios deben, o bien acudir a una casa de cambio que de soporte a ambos tokens, o bien registrarse en diferentes casas de cambio, con la consiguiente divulgación adicional de información personal. A menudo, los usuarios necesitan realizar intercambios intermedios o iniciales, normalmente BTC o ETH, pagando la correspondiente horquilla en el proceso. Además, el libro de órdenes puede no ser lo suficientemente grande para completar un intercambio sin realizar deslizamiento (en inglés \textit{slippage}). Incluso si la casa de cambio parece procesar un volumen grande, no hay garantía de que ese volumen y liquidez no sean falsos \cite{fakevolume}.
+Desde el punto de vista de los usuarios, la liquidación fragmentada reduce considerablemente la experiencia del usuario. En una exchange centralizada, los usuarios únicamente son capaces de comerciar dentro de los fondos de liquidez de la propia exchange, con su propio libro de órdenes y entre los pares de criptomonedas a los que se da soporte. Para intercambiar el token \verb|A| por el token \verb|B|, los usuarios deben, o bien acudir a una exchange que de soporte a ambos tokens, o bien registrarse en diferentes exchanges, con la consiguiente divulgación adicional de información personal. A menudo, los usuarios necesitan realizar intercambios intermedios o iniciales, normalmente BTC o ETH, pagando la correspondiente horquilla en el proceso. Además, el libro de órdenes puede no ser lo suficientemente grande para completar un intercambio sin realizar deslizamiento (en inglés \textit{slippage}). Incluso si la exchange parece procesar un volumen grande, no hay garantía de que ese volumen y liquidez no sean falsos \cite{fakevolume}.
 
-El resultado es un conjunto de silos de liquidez desconectados y un ecosistema fragmentado que se asemeja al antiguo sistema financiero, con los únicos volúmenes importantes centralizados en unas pocas casas de cambio. Las promesas de liquidez global de la cadena de bloques no tienen ninguna virtud en las casas de cambio centralizadas.
+El resultado es un conjunto de silos de liquidez desconectados y un ecosistema fragmentado que se asemeja al antiguo sistema financiero, con los únicos volúmenes importantes centralizados en unas pocas exchanges. Las promesas de liquidez global de la blockchain no tienen ninguna virtud en las exchanges centralizadas.
 
-\subsection{Deficiencias de las casas de cambio descentralizadas}
-Las casas de cambio descentralizadas difieren parcialmente de las casas de cambio centralizadas en que los usuarios mantienen el control de sus claves privadas, y por tanto sus activos, al realizarse los intercambios directamente en las cadenas de bloques subyacentes. Mediante el uso de la tecnología libre de confianza de las criptomonedas mismas, estas casas de cambio mitigan muchos de los riesgos de seguridad mencionados anteriormente. Sin embargo, aún existen problemas relacionados con el rendimiento y las limitaciones estructurales. 
+\subsection{Insuficiencias de las Exchanges Descentralizadas}
+Las exchanges descentralizadas difieren parcialmente de las exchanges centralizadas en que los usuarios mantienen el control de sus claves privadas, y por tanto sus activos, al realizarse los intercambios directamente en las blockchains subyacentes. Mediante el uso de la tecnología libre de confianza de las criptomonedas mismas, estas exchanges mitigan muchos de los riesgos de seguridad mencionados anteriormente. Sin embargo, aún existen problemas relacionados con el rendimiento y las limitaciones estructurales. 
 
 La liquidez sigue siendo un problema frecuente, ya que los usuarios deben buscar contrapartes a través de fondos de liquidez y estándares dispersos. Los efectos de la liquidación fragmentada estarán presentes si la mayoría de DEX o dApps no se valen de estándares comunes para interoperar, o si las órdenes no se comparten o envían a traves de una red lo suficientemente amplia. La liquidez de los libros de órdenes limitadas, y especialmente su resiliencia -- cuán rapido se regeneran estas órdenes limitadas -- puede afectar considerablemente a las estrategias de comercio \cite{limitorderliquidity}. La ausencia de estos estándares ha resultado, no sólo en una liquidez reducida, sino también en una exposición a una variedad de contratos inteligentes potencialmente inseguros.
 
-Además, como los intercambios se realizan en la cadena, los DEX heredan las limitaciones de la cadena de bloques subyacente, a saber: escalabilidad, retrasos en la ejecución (minado), y modificaciones de órdenes costosas. Debido a ello, los libros de órdenes en las cadenas de bloques no escalan especialmente bien, puesto que ejecutar código en la cadena de bloques incurre en un coste (gas), y esto hace que el coste de una cancelación de órdenes múltiples sea prohibitivo.
+Además, como los intercambios se realizan en la cadena, los DEX heredan las limitaciones de la blockchain subyacente, a saber: escalabilidad, retrasos en la ejecución (minado), y modificaciones de órdenes costosas. Debido a ello, los libros de órdenes en las blockchains no escalan especialmente bien, puesto que ejecutar código en la blockchain incurre en un coste (gas), y esto hace que el coste de una cancelación de órdenes múltiples sea prohibitivo.
 
-Finalmente, debido a que los libros de órdenes en las cadenas de bloques son públicos, la transacción para realizar una orden es visible por los mineros mientras espera a ser minada en el siguiente bloque y colocada en el libro de órdenes. Este retraso expone al usuario al riesgo de sufrir una inversión ventajista que mueva el precio en contra suya.
+Finalmente, debido a que los libros de órdenes en las blockchains son públicos, la transacción para realizar una orden es visible por los mineros mientras espera a ser minada en el siguiente bloque y colocada en el libro de órdenes. Este retraso expone al usuario al riesgo de sufrir front-running que mueva el precio en contra suya.
 
-\subsection{Soluciones híbridas}
-Por las razones antes expuestas, las casas de cambio basadas estrictamente en la cadena de bloques presentan limitaciones que les impiden competir con las casas de cambio centralizadas. Hay una solución intermedia entre la libertad de confianza inherente a la cadena de bloques y la velocidad y flexibilidad de órdenes de una casa de cambio centralizada. Protocolos como Loopring y 0x \cite{warren20170x} ofrecen una solución intermedia de liquidación de intercambios dentro de la cadena con una gestión de órdenes fuera de la cadena. Estas soluciones giran en torno a contratos inteligentes abiertos, pero sortean ciertas limitaciones de escalabilidad ejecutando varias funciones fuera de la cadena y dando a los nodos flexibilidad en el cumplimiento de roles críticos para la red. Sin embargo, los inconvenientes de un modelo híbrido se mantienen \cite{costofdecent}. El protocolo Loopring propone, a través de este artículo, diferencias significativas en nuestro enfoque de una solución híbrida.
+\subsection{Soluciones Híbridas}
+Por las razones antes expuestas, las exchanges basadas estrictamente en la blockchain presentan limitaciones que les impiden competir con las exchanges centralizadas. Hay una solución intermedia entre la libertad de confianza inherente a la blockchain y la velocidad y flexibilidad de órdenes de una exchange centralizada. Protocolos como Loopring y 0x \cite{warren20170x} ofrecen una solución intermedia de liquidación de intercambios dentro de la cadena con una gestión de órdenes fuera de la cadena. Estas soluciones giran en torno a contratos inteligentes abiertos, pero sortean ciertas limitaciones de escalabilidad ejecutando varias funciones fuera de la cadena y dando a los nodos flexibilidad en el cumplimiento de roles críticos para la red. Sin embargo, los inconvenientes de un modelo híbrido se mantienen \cite{costofdecent}. El protocolo Loopring propone, a través de este artículo, diferencias significativas en nuestro enfoque de una solución híbrida.
 
 
-\section{Protocolo Loopring\label{sec:loopring_protocol}}
-Loopring no es un DEX, sino un protocolo modular para la creación de DEX en multiples cadenas de bloques. Desensamblamos las partes que componen una casa de cambio tradicional y las ofrecemos como un conjunto público de contratos inteligentes y actores descentralizados en su lugar. Los roles de éstos en la red incluyen carteras virtuales, relés, consorcio de compartición de líquidez en la cadena de bloques, exploración del libro de órdenes, mineros de anillo, y servicios de tokenización de activos. Previamente a definir cada uno de ellos, debemos entender primero las órdenes de Loopring.
+\section{Loopring Protocol\label{sec:loopring_protocol}}
+Loopring is not a DEX, but a modular protocol for building DEXs on multiple blockchains. We disassemble the component parts of a traditional exchange and offer a set of public smart contracts and decentralized actors in its place. The roles in the network include wallets, relays, liquidity-sharing consortium blockchains, order book browsers, Ring-Miners, and asset tokenization services. Before defining each, we should first understand Loopring orders. 
 
-\subsection{Anillo de órdenes\label{sec:order_ring}}
-Las órdenes de Loopring se basan en lo que definimos como un modelo de órden unidireccional (MOU)\cite{coinport2014udom}.El MOU expresa las órdenes como peticiones de intercambio de tokens, \verb|cantidadV|/\verb|cantidadC|, (cantidad a vender/comprar)  en lugar de precios de compra y venta. Como cada orden es simplemente un tipo de cambio entre dos tokens, una característica potente del protocolo es la mezcla y combinación de múltiples órdenes en un intercambio circular. Al usar hasta 16 órdenes en lugar de un sólo par de criptomonedas, esto permite que haya un aumento drástico de la liquidez y la posibilidad de una mejora del precio. 
-
+\subsection{Order Ring\label{sec:order_ring}}
+Loopring orders are expressed in what we call a Unidirectional Order Model (UDOM)\cite{coinport2014udom}. UDOM expresses orders as token exchange requests, \verb|amountS|/\verb|amountB|, (amount to sell/buy)  instead of bids and asks. Since every order is just an exchange rate between two tokens, a powerful feature of the protocol is the mixing and matching of multiple orders in circular trade. By using up to 16 orders instead of a single trading pair, there is a dramatic increase in liquidity and potential for price improvement. 
 
 \begin{center}
 \begin{figurehere}
@@ -203,20 +202,20 @@ Las órdenes de Loopring se basan en lo que definimos como un modelo de órden u
   \node [order] (order2) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDEN\#2}\\
-  \textbf{dueño: Y}\\
-  \textbf{cantidadV: 9B}\\
-  \textbf{cantidadC: 12C}
+  \textbf{ORDER\#2}\\
+  \textbf{owner: Y}\\
+  \textbf{amountS: 9B}\\
+  \textbf{amountB: 12C}
  \end{tabular}
  };
  
   \node [order, below of=order2, xshift=-3.5cm] (order1) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDEN\#1}\\
-  \textbf{dueño: X}\\
-  \textbf{cantidadV: 10000A}\\
-  \textbf{cantidadC: 2B}
+  \textbf{ORDER\#1}\\
+  \textbf{owner: X}\\
+  \textbf{amountS: 10000A}\\
+  \textbf{amountB: 2B}
  \end{tabular}
  };
  
@@ -224,10 +223,10 @@ Las órdenes de Loopring se basan en lo que definimos como un modelo de órden u
   \node [order, below of=order2, xshift=3.5cm] (order3) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDEN\#3}\\
-  \textbf{dueño: Z}\\
-  \textbf{cantidadV: 100C}\\
-  \textbf{cantidadC: 160A}
+  \textbf{ORDER\#3}\\
+  \textbf{owner: Z}\\
+  \textbf{amountS: 100C}\\
+  \textbf{amountB: 160A}
  \end{tabular}
  };
  
@@ -237,88 +236,76 @@ Las órdenes de Loopring se basan en lo que definimos como un modelo de órden u
 
 \end{tikzpicture}
 
-\caption{Un anillo compuesto de 3 órdenes}
+\caption{An order-ring of 3 orders}
 \label{fig:ring}
 \end{figurehere}
 \end{center}
 
 
-La figura anterior muestra un anillo compuesto de 3 órdenes. Cada orden de venta de un token (\verb|tokenV|) es otra orden de compra del token (\verb|tokenC|). Esto crea un bucle que permite a cada orden intercambiar los tókenes deseados sin requerir de una órden opuesta para su par de criptomonedas. Los intercambios mediante par de criptomonedas tradicionales aún pueden ser realizados, en lo que básicamente es un caso especial de anillo de órdenes.
+The above figure shows an order-ring of 3 orders. Each order's token to sell (\verb|tokenS|) is another order's token to buy (\verb|tokenB|). It creates a loop that allows each order to exchange their desired tokens without requiring an opposing order for its pair. Traditional order pair trades can, of course, still be executed, in what is essentially a special case of an order-ring. 
 
-\begin{definition}[anillo de órdenes] Sean $C_{0}$, $C_{1}$, $\cdots$, $C_{n-1}$ $n$ tokens distintos, y sean $O_{0\rightarrow 1}$, $\cdots$, $O_{i\rightarrow i\oplus 1}$, $\cdots$, $O_{n-1 \rightarrow 0}$ $n$ órdenes distintas. Estas órdenes pueden formar un anillo de órdenes para el siguiente intercambio:
+\begin{definition}[order-ring] Let $C_{0}$, $C_{1}$, $\cdots$, $C_{n-1}$ be $n$ different tokens, $O_{0\rightarrow 1}$, $\cdots$, $O_{i\rightarrow i\oplus 1}$, $\cdots$, $O_{n-1 \rightarrow 0}$ be $n$ orders. Those orders can form a order-ring for trading:
 $$O_{0\rightarrow 1} \rightarrow \cdots \rightarrow O_{i\rightarrow i\oplus 1} \rightarrow \cdots \rightarrow O_{n-1\rightarrow 0} \text{, }$$
-donde $n$ es la longitud del anillo, y $i\oplus 1 \equiv i+1 \mod n$.
+where $n$ is the length of the order-ring, and $i\oplus 1 \equiv i+1 \mod n$.
 \end{definition}
 
-Un anillo de órdenes es válido cuando todas las transacciones que la componen pueden realizarse a un tipo de cambio igual o mejor que el valor original especificado implícitamente por el usuario. Para verificar la validez del anillo de órdenes, los contratos inteligentes del protocolo Loopring deben recibir anillos de órdenes de mineros de anillos cuyo producto del tipo de cambio original de todas las órdenes es igual o mayor que 1.
+An order-ring is valid when all component transactions can be executed at an exchange rate equal to or better than the original rate specified implicitly by the user. To verify order-ring validity, Loopring protocol smart contracts must receive order-rings from ring-miners where the product of the original exchange rates of all orders is equal to or greater than 1.
 
-Suponiendo que Alicia y Bob quieren cambiar sus tokens \verb|A| y \verb|B|. Alicia tiene 15 tokens \verb|A| y quiere 4 tokens \verb|B| por ellos; Bob tiene 10 tokens \verb|B|  y quiere 30 tokens \verb|A| por ellos.
+Let's assume Alice and Bob want to trade their token \verb|A| and \verb|B|. Alice has 15 token \verb|A| and she wants 4 token \verb|B| for them; Bob has 10 token \verb|B|  and he wants 30 token \verb|A| for them.
 
-¿Quién de los dos está comprando y quién está vendiendo? Esto depende únicamente del activo en que nos basemos para determinar el precio. Si el token \verb|A| es la referencia, entonces Alicia está comprando el token \verb|B| a un precio de ${15 \over 4} = 3.75$\verb|A|, mientras que Bob está vendiendo 10 tokens \verb|B| a un precio de ${30 \over 10} = 3.00$\verb|A|. En el caso de que escojamos el token \verb|B| como referencia, diremos entonces que Alicia está vendiendo 15 tokens \verb|A| a un precio de ${4\over 15}=0.26666667$\verb|B| y Bob está comprando 10 tokens \verb|A| a un precio de ${10 \over 30}=0.33333334$\verb|B|. Por tanto, quién es el comprador o vendedor es algo puramente arbitrario.
+Who is buying and who is selling? This depends only on the asset we fix to give price quotations. If token \verb|A| is the reference, then Alice is buying token \verb|B| for the price of ${15 \over 4} = 3.75$\verb|A|, while Bob is selling 10 token \verb|B| for the price of ${30 \over 10} = 3.00$\verb|A|. In the case of fixing token \verb|B| as reference, we say that Alice is selling 15 token \verb|A| for the price of ${4\over 15}=0.26666667$\verb|B| and Bob is buying 10 token \verb|A| for the price of ${10 \over 30}=0.33333334$\verb|B|. Hence, who's the buyer or seller is arbitrary.
 
-En el primer escenario, Alicia está dispuesta a pagar un precio más alto ($3.75$\verb|A|) que el precio de venta de Bob por sus tokens ($3.00$\verb|A|), mientras que en el segundo escenario Bob está dispuesto a pagar un precio más alto ($0.33333334$\verb|B|) que el precio de venta de Alicia por sus tokens ($0.26666667$\verb|B|). Queda claro que un intercambio es posible cuando el comprador está dispuesto a pagar un precio igual o más alto que el precio del vendedor.
+In the first situation Alice is willing to pay a higher price ($3.75$\verb|A|) than the price Bob is selling his tokens for ($3.00$\verb|A|), while in the second situation Bob is willing to pay a higher price ($0.33333334$\verb|B|) than the price Alice is selling her tokens for ($0.26666667$\verb|B|). It is clear that a trade is possible whenever the buyer is willing to pay an equal or higher price than the seller's price.
 
 \begin{equation}
 {{15\over 4} \over {30\over 10}} = {{10\over 30} \over {4\over 15}}={15 \over 4} \cdot {10 \over 30} = 1.25 > 1
 \end{equation}
 
-Por consiguiente, para que un conjunto de $n$ órdenes pueda ejecutarse, bien parcialmente, parcialmente o completamente, se necesita saber si el producto de cada uno de los tipos de cambios de las órdenes de compra es mayor que 1. De ser así, todas las órdenes $n$ pueden ser parcialmente o completamente ejecutadas \cite{supersymmetry}.
+Thus, for a set of $n$ orders to be able to be filled, fully or partially, we need to know if the product of each one of the exchange rates as buy orders results in a number greater or equal to 1. If so, all the $n$ orders can be either partially, or totally filled \cite{supersymmetry}.
 
-Si introducimos una tercera parte, Charlie, tal que ahora Alicia quiere dar $x_1$ tokens \verb|A| y recibir $y_1$ tokens \verb|B|, Bob quiere dar $x_2$ tokens \verb|B| y recibir $y_2$ tokens \verb|C|, y Charlie quiere dar $x_3$ tokens \verb|C| y recibir $y_3$ tokens \verb|A|. Existen los tokens necesarios, y el intercambio es posible si:
+If we introduce a third counterparty, Charlie, such that  Alice wants to give $x_1$ token \verb|A| and receive $y_1$ token \verb|B|, Bob wants to give $x_2$ token \verb|B| and receive $y_2$ token \verb|C|, and Charlie wants to give $x_3$ token \verb|C| and receive $y_3$ token \verb|A|. The necessary tokens are present, and the trade is possible if:
 
 \begin{equation}
 {{x_1 \cdot x_2 \cdot x_3 \over y_1 \cdot y_2 \cdot y_3} \geq 1}
 \end{equation}
 
 
-La sección \ref{anatomy} incluye más detalles sobre las órdenes de Loopring.
+See section \ref{anatomy} for more details about Loopring's orders.
 
 
 
-\section{Participantes del ecosistema\label{sec:ecosystem}}
-Los siguientes participantes del ecosistema ofrecen de manera conjunta todas las funcionalidades que una casa de cambio centralizada puede ofrecer: 
+\section{Ecosystem Participants\label{sec:ecosystem}}
+The following ecosystem participants jointly provide all functionalities a centralized exchange has to offer. 
 
 \begin{itemize}
 
-% format correction (Omar)
-{\setlength{\parskip}{\baselineskip}
+\item \textbf{Wallets}: A common wallet service or interface that gives users access to their tokens and a way to send orders to the Loopring network. Wallets will be incentivized to produce orders by sharing fees with ring-miners (see section \ref{sec:token}). With the belief that the future of trading will take place within the safety of individual user's wallets, connecting these liquidity pools through our protocol is paramount.
 
-\item \textbf{Carteras}: Un servicio común de cartera o interfaz que da a los usuarios acceso a sus tokens y una manera de enviar órdenes a la red de Loopring. Las carteras serán incentivadas a producir órdenes mediante la compartición de tasas con los mineros de anillo (lea la sección \ref{sec:token}). Con la creencia de que el futuro del intercambio tendrá lugar dentro de la seguridad de las carteras inviduales de los usuarios, es crucial conectar estos fondos de liquidez  a través de nuestro protocolo.
+\item \textbf{Consortium Liquidity Sharing Blockchain/Relay-Mesh}: A relay-mesh network for order \& liquidity sharing. When nodes run Loopring relay software, they are able to join an existing network and share liquidity with other relays over a consortium blockchain. The consortium blockchain we are building as a first implementation has near real time order sharing (1-2 second blocks), and trims old history to allow for faster download by new nodes. Notably, relays need not join this consortium; they can act alone and not share liquidity with others, or, they can start and manage their own liquidity sharing network.
 
-\item \textbf{Cadena de bloques de consorcio para la compartición de liquidez/malla de relés}: Una malla de relés para la compartición de órdenes y liquidez. Cuando los nodos ejecutan el código de relé de Loopring, éstos pueden unirse a redes existentes y compartir la liquidez con otros relés a traves de una cadena de bloques de consorcio. Esta primera versión de la cadena de bloques de consorcio que estamos construyendo permite la compartición de órdenes casi en tiempo real (bloques de 1-2 segundos) y reduce el historial antiguo para permitir descargas más rápidas por parte de los nodos nuevos. Cabe destacar que los relés no necesitan unirse a este consorcio; pueden actuar de forma individual sin compartir liquidez con otros o crear y gestionar su propia red de compartición de liquidez.
+\item \textbf{Relays/Ring-Miners}: Relays are nodes that receive orders from wallets or the relay-mesh, maintain public order books and trade history, and optionally broadcast orders to other relays (via any arbitrary off-chain medium) and/or relay-mesh nodes. Ring-mining is a feature -- not a requirement -- of relays. It is computationally heavy and is done completely off-chain. We call relays with the ring-mining feature turned on \enquote{Ring-Miners}, who produce order-rings by stitching together disparate orders. Relays are free in (1) how they choose to communicate with one another, (2) how they build their order books, and (3) how they mine order-rings (mining algorithms).
 
-\item \textbf{Relés/Mineros de anillos}: Los relés son nodos que reciben órdenes de las carteras y de la malla de relés, mantienen los libros de órdenes e historial de intercambios públicos, y de manera opcional, retransmiten las órdenes a otros relés (mediante un medio externo arbitrario) y/o mallas de relés. El minado de anillos de órdenes es una característica -- no un requisito -- de los relés. Esta es una aplicación computacionalmente intensiva y se realiza completamente fuera de la cadena. Los relés con la capacidad de minar estos anillos, llamados \enquote{Mineros de anillos}, son los que producen anillos uniendo órdenes dispersas. Los relés tienen libertad para (1) escoger cómo comunicarse entre ellos, (2) cómo crear los libros de órdenes, y (3) qué algoritmo de minado usar para minar los anillos de órdenes.
+\item \textbf{Loopring Protocol Smart Contracts (LPSC)}: A set of public and free smart contracts that checks order-rings received from ring-miners, trustlessly settles and transfers tokens on behalf of users, incentivizes ring-miners and wallets with fees, and emits events. Relays/order browsers listen to these events to keep their order books and trade history up to date. See appendix \ref{app:protocol_ethereum} for details.
 
-\item \textbf{Contratos inteligentes del protocolo Loopring (CIPR)}: Un conjunto de contratos inteligentes público y abierto que comprueba los anillos de órdenes recibidos de los mineros de anillos, confirma y transfiere los tokens en nombre de los usuarios, recompensa a los mineros de anillos y las carteras con las tasas de transacción y emite eventos. Los relés y exploradores de órdenes escuchan estos eventos para mantener sus libros de órdenes e historial de intercambios actualizados. 
+\item \textbf{Asset Tokenization Services (ATS)}: A bridge between assets that cannot be directly traded on Loopring. They are centralized services run by trustworthy companies or organizations. Users deposit assets (real, fiat or tokens from other chains) and get tokens issued, which can be redeemed for the deposit in the future. Loopring is not a cross-chain exchange protocol (until a suitable solution exists), but ATS enable trading of ERC20 tokens \cite{ERC20} with physical assets as well as assets on other blockchains. 
 
-\item \textbf{Servicios de tokenización de activos (STA)}: Una pasarela para los activos que no pueden ser intercambiados directamente en  Loopring. Como por ejemplo servicios centralizados gestionados por compañías u organizaciones de confianza. Los usuarios depositan activos (reales, dinero fíat o tokens de otras cadenas) y a cambio reciben tokens que pueden ser canjeados en el futuro. Loopring no es un protocolo de intercambio entre-cadenas (mientras no exista una solución adecuada para ello), pero el STA permite el intercambio de tokens ERC20 \cite{ERC20} por activos físicos o activos digitales de otras cadenas de bloques. 
-
-}% format correction (Omar) closed
 \end{itemize}
 
 
-\section{Proceso de intercambio\label{sec:process}}
+\section{Exchange Process\label{sec:process}}
 
 
 
 \begin{enumerate} 
 
-\item \textbf{Autorización del protocolo}: En la figura \ref{fig:process}, el usuario \verb|Y| que quiere cambiar sus tokens autoriza al CIPR a gestionar una \verb|amountS| de tokens \verb|B| para su venta. Esto no congela los tokens del usuario, que siguen libres de ser movidos mientras la orden no se ejecute.
 
-\item \textbf{Creación de la orden}: El tipo de cambio y el libro de órdenes para el par token\verb|B|/token\verb|C| viene dado por los relés u otros agentes conectados a la red, como por ejemplo los exploradores de libros de órdenes. El usuario \verb|Y| crea una orden (orden límite) especificando la \verb|cantidadV|, la \verb|cantidadC| y otros parámetros a través de la interfaz de cartera virtual integrada. Una cantidad de LRx puede ser añadida a la órden como tasa para los mineros de anillos; una cantidad mayor de LRx supone una mayor probabilidad de que los mineros procesen la orden más rapidamente. El \textit{hash} de la orden se firma con la clave privada del usuario \verb|Y|.
+\item \textbf{Protocol Authorization}: In figure \ref{fig:process}, user \verb|Y| who wants to exchange tokens authorizes the LPSC to handle \verb|amountS| of token \verb|B| the user wants to sell. This does not lock the user's tokens, who remains free to move them while the order is processed.
 
-\item \textbf{Envío de la orden}: La cartera virtual envía la orden y su firma a uno o más relés. Estos actualizan su libro de órdenes público. El protocolo no requiere que estos libros estén estructurados de una manera específica; por ejemplo, en orden de llegada. En su lugar, los relés tienen el poder de tomar sus propias decisiones al construir sus libros de órdenes.
+\item \textbf{Order Creation}: The current rate and order book for token \verb|B| vs token \verb|C|, are provided by relays or other agents hooked up to the network, such as order book browsers. User \verb|Y| places an order (limit order) specifying \verb|amountS| and \verb|amountB| and other parameters through any integrated wallet interface. An amount of LRx can be added to the order as a fee for ring-miners; higher LRx fee means a better chance to be processed earlier by ring-miners. The order's hash is signed with user \verb|Y|'s private-key.
 
-\item \textbf{Compartición de la liquidez}: Los relés envían la orden a otros relés a traves de un medio de comunicación arbitrario. De nuevo, se ofrece una flexibilidad en la manera de definir cómo interactuan los nodos entre sí. Para facilitar un cierto nivel de conectividad de la red, existe una malla de relés fija para la compartición de liquidez dentro de la cadena de bloques de consorcio. Como se ha mencionado anteriormente, esta malla de relés ha sido optimizada para ser inclusiva y rápida.
+\item \textbf{Order Broadcast}: The wallet sends the order and its signature to one or more relays. Relays update their public order book. The protocol doesn't require order books to be built in a certain way, such as first-come-first-serve. Instead, relays have the power to make their own design decisions in building their order books.
 
-
-
-\item \textbf{Minado del anillo (Combinación de órdenes)}:  Los mineros de anillos intentan ejecutar las órdenes parcial o completamente a un tipo de cambio igual o mejor emparejándola con una u otras órdenes. El minado de anillos es la razón principal de por qué el protocolo es capaz de ofrecer alta liquidez en cualquier par de criptomonedas. Si el tipo de cambio al que la órden se ejecutó es mejor que la que especificó el usuarioIf the executed rate is better than what user \verb|Y|, la diferencia es compartida entre todas las órdenes del anillo. Como recompensa, el minero del anillo escoge entre adjudicarse parte de esa diferencia (\verb|marginSplitPercentage|) y devolver la tasa de transacción en LRx al usuario, o sencillamente quedarse con la tasa de transacción en LRx.
-
-\item \textbf{Verificación y acuerdo}: El anillo de órdenes es recibido por el CIPR. Este realiza múltiples comprobaciones para verificar los datos proporcionados por el minero del anillo y determina si el anillo puede ser if the order-ring can be settled fully or partially (depending on the fill rate of orders in-ring and tokens in users' wallets). If all checks are successful, the contract atomically transfers the tokens to users and pays the ring-miner and wallet fees at the same time. If user \verb|Y|'s balance as determined by the LPSC is insufficient, it will be considered scaled-down: a scaled-down order will automatically scale up to its original size if sufficient funds are deposited to its address, unlike a cancellation, which is a one way manual operation and cannot be reversed.
-
-
-\end{enumerate}
+\item \textbf{Liquidity Sharing}: Relays broadcast the order to other relays through any arbitrary communication medium. Once again, there is flexibility how/whether nodes interact. To facilitate a certain level of network connectivity, there is a built-in liquidity sharing relay-mesh using a consortium blockchain. As mentioned in the prior section, this relay-mesh is optimized for speed and inclusivity.
 
 \begin{center}
 \begin{figurehere}
@@ -384,20 +371,20 @@ Los siguientes participantes del ecosistema ofrecen de manera conjunta todas las
   ]
 
  
- \node [role] (user1)  {usuario X};
- \node [role, below of=user1] (user2)  {usuario Y};
- \node [role, below of=user2] (user3)  {usuario Z};
- \node [role, below of=user3, fill=gray!20] (relay1)  {relé M};
- \node [role, below of=relay1, fill=gray!20] (relay2)  {relé N};
+ \node [role] (user1)  {user X};
+ \node [role, below of=user1] (user2)  {user Y};
+ \node [role, below of=user2] (user3)  {user Z};
+ \node [role, below of=user3, fill=gray!20] (relay1)  {relay M};
+ \node [role, below of=relay1, fill=gray!20] (relay2)  {relay N};
 
  
  \node [order, left of=user1, xshift=-1cm] (order1) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDEN 1}\\
-  \textbf{dueño: X}\\
-  \textbf{cantidadV: 10000 A}\\
-  \textbf{cantidadC: 2 B}
+  \textbf{ORDER 1}\\
+  \textbf{owner: X}\\
+  \textbf{amountS: 10000 A}\\
+  \textbf{amountB: 2 B}
  \end{tabular}
  };
  
@@ -410,10 +397,10 @@ Los siguientes participantes del ecosistema ofrecen de manera conjunta todas las
  \node [order,left of=user2, xshift=-1.5cm] (order2) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDEN 2}\\
-  \textbf{dueño: Y}\\
-  \textbf{cantidadV: 9  B}\\
-  \textbf{cantidadC: 12 C}
+  \textbf{ORDER 2}\\
+  \textbf{owner: Y}\\
+  \textbf{amountS: 9  B}\\
+  \textbf{amountB: 12 C}
  \end{tabular}
  };
  \draw [draw, ->]  (user2) -- (order2) [label]{};
@@ -425,10 +412,10 @@ Los siguientes participantes del ecosistema ofrecen de manera conjunta todas las
 \node [order, left of=user3, xshift=-2cm] (order3) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDEN 3}\\
-  \textbf{dueño: Z}\\
-  \textbf{cantidadV: 100 C}\\
-  \textbf{cantidadC: 160 A}
+  \textbf{ORDER 3}\\
+  \textbf{owner: Z}\\
+  \textbf{amountS: 100 C}\\
+  \textbf{amountB: 160 A}
  \end{tabular}
  };
  \draw [draw, ->]  (user3) -- (order3) [label]{};
@@ -450,28 +437,28 @@ minimum height=5cm] (ring) {};
 \node [order, dashed, below of=relay2,yshift=-0.2cm,xshift=-2.5cm] (order11) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDEN 1}\\
-  \textbf{dueño: X}\\
-  \textbf{cantidadV: 10000 A}\\
-  \textbf{cantidadC: 2 B}
+  \textbf{ORDER 1}\\
+  \textbf{owner: X}\\
+  \textbf{amountS: 10000 A}\\
+  \textbf{amountB: 2 B}
  \end{tabular}
  };
  \node [order, dashed,below of=order11,xshift=-0.25cm,yshift=0.7cm] (order21) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDEN 2}\\
-  \textbf{dueño: Y}\\
-  \textbf{cantidadV: 9  B}\\
-  \textbf{cantidadC: 12 C}
+  \textbf{ORDER 2}\\
+  \textbf{owner: Y}\\
+  \textbf{amountS: 9  B}\\
+  \textbf{amountB: 12 C}
  \end{tabular}
  };
 \node [order, dashed,below of=order21,xshift=-0.25cm,yshift=0.7cm] (order31) 
  {%
  \begin{tabular}{l}
-  \textbf{ORDEN 3}\\
-  \textbf{dueño: Z}\\
-  \textbf{cantidadV: 100 C}\\
-  \textbf{cantidadC: 160 A}
+  \textbf{ORDER 3}\\
+  \textbf{owner: Z}\\
+  \textbf{amountS: 100 C}\\
+  \textbf{amountB: 160 A}
  \end{tabular}
  };
  
@@ -484,24 +471,24 @@ yshift=-4.5cm,
 xshift=0.1cm,
 scale=0.7,
 minimum width=3.2cm,
-minimum height=15.6cm] (blockchain) {\parbox[b][15cm]{1.3cm}{cadena de bloques}};
+minimum height=15.6cm] (blockchain) {\parbox[b][15cm]{1.3cm}{blockchain}};
 % blockchain accounts
-  \node [account, right of=user1, xshift=1cm] (account1)  {cuenta X};
-  \node [account, right of=user2, xshift=1cm] (account2)  {cuenta Y};
-  \node [account, right of=user3, xshift=1cm] (account3)  {cuenta Z};
-  \node [account, right of=relay1, xshift=1cm] (account4)  {cuenta M};
-  \node [account, right of=relay2, xshift=1cm] (account5)  {cuenta N};
-  \node [account, double, below of=account5, yshift=-1.5cm] (psc)  {CIPR};
+  \node [account, right of=user1, xshift=1cm] (account1)  {accountX};
+  \node [account, right of=user2, xshift=1cm] (account2)  {accountY};
+  \node [account, right of=user3, xshift=1cm] (account3)  {accountZ};
+  \node [account, right of=relay1, xshift=1cm] (account4)  {accountM};
+  \node [account, right of=relay2, xshift=1cm] (account5)  {accountN};
+  \node [account, double, below of=account5, yshift=-1.5cm] (psc)  {LPSC};
   
  \draw [draw, ->]  (user1) -- (account1) [label]{};
  \draw [draw, ->]  (user2) -- (account2) [label]{};
  \draw [draw, ->]  (user3) -- (account3) [label]{};
 % \draw [draw, ->]  (relay1) -- (account4) [label]{};
 % \draw [draw, ->]  (relay2) -- (account5) [label]{};
- \draw [draw, double, thick]  (relay1) to node [auto, scale=0.6] {liquidez compartida}  (relay2) [label]{};
+ \draw [draw, double, thick]  (relay1) to node [auto, scale=0.7] {share liquidity}  (relay2) [label]{};
 % \draw [draw, ->]  (relay1) -- (ring) [label]{};
- \draw [draw, ->]  (relay2) to node [auto, scale=0.7, xshift=-2.5cm, yshift=0.3cm] {minado del anillo}  (ring) [label]{};
- \draw [draw, ->]  (ring) to node [auto, scale=0.6] {función: submitRing} (psc) [label]{};
+ \draw [draw, ->]  (relay2) to node [auto, scale=0.7, xshift=-1.8cm, yshift=0.3cm] {ring-mining}  (ring) [label]{};
+ \draw [draw, ->]  (ring) to node [auto, scale=0.7] {submitRing} (psc) [label]{};
  
  \draw [bend left,->] (account1) to node [auto, scale=0.7] {\textbf{7898 A}} (account3);
  \draw [bend left,->] (account2) to node [auto, scale=0.7] {\textbf{8 B}} (account1);
@@ -509,7 +496,7 @@ minimum height=15.6cm] (blockchain) {\parbox[b][15cm]{1.3cm}{cadena de bloques}}
  
  \draw [bend left,->, dashed] (account1) to node [auto, scale=0.7] {} (account5);
  \draw [bend left,->, dashed] (account2) to node [auto, scale=0.7] {} (account5);
- \draw [bend left,->, dashed] (account3) to node [auto, scale=0.7, yshift=-1.0cm] {\textbf{Liquidación de}} (account5);
+ \draw [bend left,->, dashed] (account3) to node [auto, scale=0.7, xshift=.5cm] {\textbf{Fee}} (account5);
   
   
 % \draw [draw,->] (order1) -- node [label] {\textbf{7898 A}} (order3);
@@ -523,14 +510,23 @@ minimum height=15.6cm] (blockchain) {\parbox[b][15cm]{1.3cm}{cadena de bloques}}
 \node [steps, below of=relay2, xshift=-0.2cm, yshift=0.4cm] () {5};
 \node [steps, right of=account3, xshift=-0.6cm] (step5) {6};
 
- \draw [bend right, ->]  (psc) to node [auto, scale=0.7, xshift=0.5cm] {la comisión} (step5) [label]{};
+ \draw [bend right, ->]  (psc) to node [auto, scale=0.7, xshift=0.5cm] {settlement} (step5) [label]{};
  
 \end{tikzpicture}
 
-\caption{Proceso de intercambio con Loopring}
+\caption{Loopring Exchange Process}
 \label{fig:process}
 \end{figurehere}
 \end{center}
+
+
+
+\item \textbf{Ring-Mining (Order Matching)}:  Ring-miners try to fill the order fully or partially at the given exchange rate or better by matching it with multiple other orders. Ring-mining is the main reason why the protocol is able to provide high liquidity over any pair. If the executed rate is better than what user Y specified, margin is shared amongst all orders in the order-ring. As a reward, the ring-miner chooses between claiming part of the margin (Margin-Split, and giving back the LRx to the user), or simply keeping the LRx fee.
+
+\item \textbf{Verification \& Settlement}: The order-ring is received by LPSC. It makes multiple checks to verify the ring-miner supplied data and determines if the order-ring can be settled fully or partially (depending on the fill rate of orders in-ring and tokens in users' wallets). If all checks are successful, the contract atomically transfers the tokens to users and pays the ring-miner and wallet fees at the same time. If user \verb|Y|'s balance as determined by the LPSC is insufficient, it will be considered scaled-down: a scaled-down order will automatically scale up to its original size if sufficient funds are deposited to its address, unlike a cancellation, which is a one way manual operation and cannot be reversed.
+
+
+\end{enumerate}
 
 
 
