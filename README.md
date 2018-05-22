@@ -8,10 +8,11 @@ Jose A (javalero@gandia.uned.es)- Grammar reviewer
 
 
 Current progress 22/05/2018:
-- Abstract + Sections 1-5 (grammar review 03)
-- Sections 6-7 (grammar review 02)
+- Title and keywords improvement (done)
 
 Future work:
+- Abstract + Sections 1-5 (grammar review 03)
+- Sections 6-7 (grammar review 02)
 - Sections 8-12 (grammar review 01)
 - Sections 8-12 (grammar review 02)
 - Sections 6-12 (grammar review 03)
