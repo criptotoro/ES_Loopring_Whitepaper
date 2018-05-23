@@ -3,11 +3,13 @@
 Project for the translation of Loopring´s whitepaper to Spanish
 
 Project member: 
-Omar V (criptotoro88@gmail.com) - Main translator & team leader
-Jose A (javalero@gandia.uned.es)- Grammar reviewer
+- Omar V (criptotoro88@gmail.com) - Main translator & team leader
+- Jose A (javalero@gandia.uned.es)- Grammar reviewer
 
 
-Current progress 22/05/2018:
+Current progress 23/05/2018:
+- Abstract + Sections 1-5 (grammar review 03)
+- Sections 6-7 (grammar review 02)
 - Title and keywords improvement (done)
 
 Future work:
@@ -20,6 +22,7 @@ Future work:
 - Whole paper (external review 01-02)
 
 Progress completed:
+
 - Section 12: "Acknowledgments" translated
 - Section 11: "Summary" translated
 - Section 10: "Other Attacks" translated
@@ -33,8 +36,6 @@ Progress completed:
 - Section 5: "Exchange process"	translated
 - Sections 3,4,5 (grammar review 01)
 - Sections 1,2 (grammar review 02)
-- Format check 01
-- Header translations
 - Section 5: "Exchange process"	translated
 - Section 4: "Ecosystem participants" translated
 - Section 3: "Loopring protocol" translated
