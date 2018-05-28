@@ -7,22 +7,20 @@ Project member:
 - Jose A (javalero@gandia.uned.es)- Grammar reviewer
 
 
-Current progress 23/05/2018:
-- Abstract + Sections 1-5 (grammar review 03)
-- Sections 6-7 (grammar review 02)
-- Title and keywords improvement (done)
-
 Future work:
+- Whole paper (external review 01-02)
+
+
+Progress completed:
 - Abstract + Sections 1-5 (grammar review 03)
 - Sections 6-7 (grammar review 02)
 - Sections 8-12 (grammar review 01)
 - Sections 8-12 (grammar review 02)
 - Sections 6-12 (grammar review 03)
 - Whole paper (grammar review 04)
-- Whole paper (external review 01-02)
-
-Progress completed:
-
+- Abstract + Sections 1-5 (grammar review 03)
+- Sections 6-7 (grammar review 02)
+- Title and keywords improvement (done)
 - Section 12: "Acknowledgments" translated
 - Section 11: "Summary" translated
 - Section 10: "Other Attacks" translated
