@@ -9,7 +9,7 @@ Project members:
 The whitepaper was fully translated and sent to the official Loopring´s whitepaper Github by pull request the 1st of June
 https://github.com/Loopring/whitepaper
 
-The files in this github are obsolete. The fork for the pull request can be found in this link
+The files in this github are OBSOLETE. The fork for the pull request with the updated translation can be found in the link below:
 https://github.com/criptotoro/whitepaper
 
 Progress completed:
