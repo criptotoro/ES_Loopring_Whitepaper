@@ -2,16 +2,18 @@
 
 Project for the translation of Loopring´s whitepaper to Spanish
 
-Project member: 
+Project members: 
 - Omar V (criptotoro88@gmail.com) - Main translator & team leader
 - Jose A (javalero@gandia.uned.es)- Grammar reviewer
 
+The whitepaper has been fully translated and sent to the official Loopring´s whitepaper Github by pull request the 1st of June
+https://github.com/Loopring/whitepaper
 
-Future work:
-- Whole paper (external review 01-02)
-
+The files in this github are obsolete. The fork for the pull request can be found in this link
+https://github.com/criptotoro/whitepaper
 
 Progress completed:
+- Whole paper (external review 01-02)
 - Abstract + Sections 1-5 (grammar review 03)
 - Sections 6-7 (grammar review 02)
 - Sections 8-12 (grammar review 01)
