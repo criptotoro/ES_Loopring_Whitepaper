@@ -6,7 +6,7 @@ Project members:
 - Omar V (criptotoro88@gmail.com) - Main translator & team leader
 - Jose A (javalero@gandia.uned.es)- Grammar reviewer
 
-The whitepaper has been fully translated and sent to the official Loopring´s whitepaper Github by pull request the 1st of June
+The whitepaper was fully translated and sent to the official Loopring´s whitepaper Github by pull request the 1st of June
 https://github.com/Loopring/whitepaper
 
 The files in this github are obsolete. The fork for the pull request can be found in this link
