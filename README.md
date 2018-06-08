@@ -1,16 +1,18 @@
 # ES_Loopring_Whitepaper
 
+The whitepaper was fully translated and sent to the official Loopring´s whitepaper Github by pull request the 1st of June
+https://github.com/Loopring/whitepaper
+The files in this github are now OBSOLETE
+
+----------------------------------------------------------------------
+
 Project for the translation of Loopring´s whitepaper to Spanish
 
 Project members: 
 - Omar V (criptotoro88@gmail.com) - Main translator & team leader
 - Jose A (javalero@gandia.uned.es)- Grammar reviewer
 
-The whitepaper was fully translated and sent to the official Loopring´s whitepaper Github by pull request the 1st of June
-https://github.com/Loopring/whitepaper
 
-The files in this github are OBSOLETE. The fork for the pull request with the updated translation can be found in the link below:
-https://github.com/criptotoro/whitepaper
 
 Progress completed:
 - Whole paper (external review 01-02)
